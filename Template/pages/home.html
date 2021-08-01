@@ -1,0 +1,25 @@
+{% extends 'pages/base.html' %}
+    {% block title %}
+        <title>Home</title>
+
+    {% endblock title %}
+{% block Content %}
+        <div class="container">
+
+    <br>
+    <br>
+
+    <div class="row">
+    <div class="col-6" >
+        <h1>To Do Application</h1>
+        <div class="list-group">
+  <a href="admin/" class="list-group-item list-group-item-action list-group-item-primary">Admin</a>
+  <a href="{% url 'categories_list' %}" class="list-group-item list-group-item-action list-group-item-success">Categories</a>
+  <a href="{% url 'task_list' %}" class="list-group-item list-group-item-action list-group-item-danger">Tasks</a>
+  <a href="{% url 'add_task' %}" class="list-group-item list-group-item-action list-group-item-warning">+ Add new task</a>
+
+</div>
+        </div>
+    </div>
+</div>
+{% endblock Content %}

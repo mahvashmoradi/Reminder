@@ -1,0 +1,21 @@
+{% extends 'pages/base.html' %}
+    {% block title %}
+        <title>Task detail</title>
+
+    {% endblock title %}
+{% block Content %}
+    <div class="article-entry">
+        <h2>{{ object.title }}</h2>
+        <p>description : {{ object.description }}</p>
+        <p>status : {{ object.status }}</p>
+        <p>due_date : {{ object.due_date | timeuntil }}</p>
+        {#<p>{{ object.expire_date |timeuntil }}</p>#}
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="{% url 'task_edit' task.pk %}">Edit</a> |
+    <a href="{% url 'task_delete' task.pk %}">Delete</a>
+    <p>Back to <a href="{% url 'task_list' %}">All Task</a>.</p>
+{% endblock Content %}
